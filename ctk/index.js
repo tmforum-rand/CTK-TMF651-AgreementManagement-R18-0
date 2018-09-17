@@ -76,6 +76,9 @@ function breakDownURL(URL){
         hostname = hostname.substr(0,hostname.indexOf("/"));
         console.log(`HOSTNAME: ${hostname}`);
         APIRelativeAddress = URL.substr(URL.indexOf(hostname)+hostname.length,URL.length);
+        if(APIRelativeAddress.endsWith("/")){
+            APIRelativeAddress = APIRelativeAddress.substr(0,APIRelativeAddress.length-1);
+        }
         console.log(`APIRELATIVEADDRESS: ${APIRelativeAddress}`);
     }
     else {
@@ -99,7 +102,7 @@ function breakDownURL(URL){
 
 function getURL(){
     
-    rl.question('////////////////////////////////////////////////////////////////////////\nWhat is your full API address omiting the endpoint? example:\nhttp://tm-forum-open-api-reference-implementation.mybluemix.net/tmf-api/agreementManagement/v2/agreement\nbecomes\nhttp://tm-forum-open-api-reference-implementation.mybluemix.net/tmf-api/agreementManagement/v2/\n>', (answer) => {
+    rl.question('////////////////////////////////////////////////////////////////////////\nWhat is your full API address omiting the endpoint? example:\nhttps://tm-forum-open-api-reference-implementation.mybluemix.net/tmf-api/agreementManagement/v2/agreement\nbecomes\nhttps://tm-forum-open-api-reference-implementation.mybluemix.net/tmf-api/agreementManagement/v2/\n>', (answer) => {
     DefaultURL = answer;
     rl.close();
     isURLValid(answer);
@@ -125,7 +128,7 @@ function exportEnvironment(){
         if (element.key == "port"){
             element.value = port;
         } 
-        if (element.key == "ProductOfferingQualificationAPI"){
+        if (element.key == "AgreementManagementAPI"){
             element.value = "{{schema}}://{{host}}:{{port}}"+APIRelativeAddress;
         }
     });

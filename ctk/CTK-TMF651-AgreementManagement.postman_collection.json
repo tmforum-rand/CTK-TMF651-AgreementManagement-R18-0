@@ -6,11 +6,11 @@
 	},
 	"item": [
 		{
-			"_postman_id": "23441331-6086-4d62-91bf-d858c7eae774",
+			"_postman_id": "1c28c1c3-0b3d-4be5-a468-17bbf7ec7bfe",
 			"name": "TC_Agreement_N1 – Create new Agreement with minimum required information",
 			"item": [
 				{
-					"_postman_id": "dfd1e080-8541-4b85-b054-aecbfc662f0a",
+					"_postman_id": "960d9e4e-6bc8-424c-893e-6915783aafa6",
 					"name": "Create a new agreement IDAM1",
 					"event": [
 						{
@@ -145,7 +145,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "a052ab81-53cd-4641-b622-73aad5256f0e",
+					"_postman_id": "ae63e187-df55-4fed-a4dc-52928973fd08",
 					"name": "Get all Agreement and check if new IDAM1 is created",
 					"event": [
 						{
@@ -268,7 +268,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "f4d1af40-6a8f-4aa7-b6cf-77ecb0cf3bcd",
+					"_postman_id": "e8cb71ce-c5e3-49bf-8885-6deb5676b32b",
 					"name": "/agreement/{IDAM1}",
 					"event": [
 						{
@@ -395,11 +395,11 @@
 			"description": "A new product will be created with minimal required information, API returns success code (200)"
 		},
 		{
-			"_postman_id": "f5bc4900-8b50-4239-b9d5-f7e0821d6c4c",
+			"_postman_id": "4c1a9913-d748-4997-820e-6c5949c099d2",
 			"name": "TC_Agreement_N2 – Create new Agreement with minimum set of parameters supported by server",
 			"item": [
 				{
-					"_postman_id": "2c53f781-ef9e-44c8-a944-d42d429dd8a8",
+					"_postman_id": "a4ac3cbd-3771-42e5-ac00-eecd5b877604",
 					"name": "/agreement - Create a new",
 					"event": [
 						{
@@ -531,7 +531,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "40c697a8-e657-40f3-976e-2fe86f13804e",
+					"_postman_id": "39d25537-3d18-4ced-8c9c-70a7e44d278a",
 					"name": "Get all Agreement and check if new IDAM2 is created",
 					"event": [
 						{
@@ -654,7 +654,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "5cc789d4-8a81-4fc9-b2e4-7cdac9acb06c",
+					"_postman_id": "8d6e25bb-2d31-4dfe-97c9-646f78a61847",
 					"name": "/agreement/{IDAM2}",
 					"event": [
 						{
@@ -781,11 +781,11 @@
 			"description": "Patch an existing Product. Server returns success (200)"
 		},
 		{
-			"_postman_id": "a310e7b2-f80b-4f34-9d57-d791dad4d9dc",
+			"_postman_id": "a256f031-dfa4-45a1-9e20-62670fc93ece",
 			"name": "TC_Agreement_N3 – Search for Agreements with specific characteristics",
 			"item": [
 				{
-					"_postman_id": "9469c639-aa3d-41b9-a81b-eac825410d15",
+					"_postman_id": "da3058ca-0588-48ff-a864-568045cb37eb",
 					"name": "Get all Agreement and test if it has IDAM1, IDAM2",
 					"event": [
 						{
@@ -953,7 +953,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "378f2a6c-404b-40a7-ab6c-8dbd2c0e0a39",
+					"_postman_id": "0569f6b0-f2cc-4a4c-b850-0e3489494f91",
 					"name": "Filtered by specific attribute 'type=throughput '",
 					"event": [
 						{
@@ -1097,11 +1097,11 @@
 			"description": "Return the Product objects that satisfy the supplied search criteria"
 		},
 		{
-			"_postman_id": "1a7bf7df-bb81-4456-bc1f-9ea5b8858a98",
+			"_postman_id": "fc3a41d3-2295-4643-a8c3-9a34364792e7",
 			"name": "TC_Agreement_N4 - N4 – Filtered retrieval of Agreements",
 			"item": [
 				{
-					"_postman_id": "7148f6f4-d506-4c93-922d-889019811b9b",
+					"_postman_id": "e7597987-bac8-40ab-b9fa-809ce47c96a1",
 					"name": "Filtered by specific attribute 'type' Copy",
 					"event": [
 						{
@@ -1224,66 +1224,11 @@
 			"description": "Retrieve only those products that satisfy the supplied filter criteria"
 		},
 		{
-			"_postman_id": "88cdc904-c6d9-4301-ba33-ea6164d5394f",
-			"name": "TC_Agreement_E2 - Invalid request - Missing mandatory Parameter",
-			"item": [
-				{
-					"_postman_id": "b33d64b7-ab93-471c-bc22-3b217b973d79",
-					"name": "TC_E2_Post with missing mandatory parameters",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "7bc636aa-55c6-4a87-b28d-f460bb1c6afa",
-								"type": "text/javascript",
-								"exec": [
-									"//Notice that this request is missing a type but any other mandatory parameter could be used.",
-									"",
-									"pm.test(\"Status code is 400\", function () {",
-									"    pm.response.to.have.status(400);",
-									"});"
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"<anytext>\",\r\n\t\"agreementItem\": [],\r\n\t\"engagedPartyRole\": []\r\n}"
-						},
-						"url": {
-							"raw": "{{AgreementManagementAPI}}/agreement",
-							"host": [
-								"{{AgreementManagementAPI}}"
-							],
-							"path": [
-								"agreement"
-							]
-						},
-						"description": "Server returns 4xx error when Product creation request is missing mandatory information"
-					},
-					"response": []
-				}
-			],
-			"description": "The Product creation request has failed due to missing parameter(s)"
-		},
-		{
-			"_postman_id": "fff73e26-bc84-4928-8ca6-864a683f6438",
+			"_postman_id": "64446c82-43fe-4d67-a4dd-d096efa8f69e",
 			"name": "TC_Agreement_E1 - Unknown Agreement Identifier",
 			"item": [
 				{
-					"_postman_id": "d9ecded5-ef6d-418c-9159-22c96e3be03e",
+					"_postman_id": "14c482b4-5073-48c7-bc14-cba4ef6c33ad",
 					"name": "/appointment/{unknown}",
 					"event": [
 						{
@@ -1334,11 +1279,66 @@
 			"description": "The API should return a 404 in the event it is invoked with a product ID that is not recognised"
 		},
 		{
-			"_postman_id": "15cec5b4-c6bd-4028-8843-4c21e0fea4e3",
+			"_postman_id": "6f82d725-ecbb-4ff9-864f-2ea80e7d53e3",
+			"name": "TC_Agreement_E2 - Invalid request - Missing mandatory Parameter",
+			"item": [
+				{
+					"_postman_id": "ef0b3c8f-7fe6-4b77-8119-0d43acc77e75",
+					"name": "TC_E2_Post with missing mandatory parameters",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7bc636aa-55c6-4a87-b28d-f460bb1c6afa",
+								"type": "text/javascript",
+								"exec": [
+									"//Notice that this request is missing a type but any other mandatory parameter could be used.",
+									"",
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"<anytext>\",\r\n\t\"agreementItem\": [],\r\n\t\"engagedPartyRole\": []\r\n}"
+						},
+						"url": {
+							"raw": "{{AgreementManagementAPI}}/agreement",
+							"host": [
+								"{{AgreementManagementAPI}}"
+							],
+							"path": [
+								"agreement"
+							]
+						},
+						"description": "Server returns 4xx error when Product creation request is missing mandatory information"
+					},
+					"response": []
+				}
+			],
+			"description": "The Product creation request has failed due to missing parameter(s)"
+		},
+		{
+			"_postman_id": "c748f90f-be89-4f0a-84da-27d23eb3e33e",
 			"name": "TC_Agreement_E3 - Invalid request - Missing parameter mandatory in context",
 			"item": [
 				{
-					"_postman_id": "c4a1370f-784e-4196-99bb-b12f912a807b",
+					"_postman_id": "68831b42-299a-42cc-aad8-f770727d02d0",
 					"name": "TC_E3_Post with missing mandatory parameters",
 					"event": [
 						{
